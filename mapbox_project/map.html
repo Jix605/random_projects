@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>some title for webpage lol</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .marker {
+            background-image: url('markers/mapbox-marker-icon-20px-purple.png');
+            background-size: cover;
+            width: 20px;
+            height: 48px;
+            cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="jquery.js"></script>
+    <script>
+        // TO MAKE THE MAP APPEAR YOU MUST
+        // ADD YOUR ACCESS TOKEN FROM
+        // https://account.mapbox.com
+        mapboxgl.accessToken = 'pk.eyJ1IjoicnlsYW5sZXR0IiwiYSI6ImNrbDdtOXMzMjFvaGEydXA2dDdmb3V3OGoifQ.hqdEylBW6vJtN8bQoMdvqA';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            center: [-94.49, 36.54], // starting position [lng, lat]
+            zoom: 9 // starting zoom
+        });
+
+        fetch('./pins.json').then(response => response.json()).then(map_data => {
+            jQuery.each(map_data.locations, function(index, value){
+                var data = value[0];
+
+                var el = document.createElement('div');
+                el.className = 'marker';
+                el.style.backgroundImage = `url(markers/mapbox-marker-icon-20px-${data["icon_colour"]}.png)`;
+                new mapboxgl.Marker(el).setLngLat([data["longitude"], data["latitude"]]).setPopup(
+                    new mapboxgl.Popup({ offset: 25 }) // add popups
+                        .setHTML(
+                            `<h3>${index}</h3><p>${data["description"]}</p>`
+                        )
+                )
+                    .addTo(map)
+            });
+        });
+    </script>
+
+</body>
+
+</html>

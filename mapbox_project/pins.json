@@ -1,0 +1,36 @@
+{
+    "locations": {
+        "Elk River Floats & Wayside Campground": [
+            {
+                "longitude": -94.49422953991868,
+                "latitude": 36.54881468620122,
+                "description": "base description",
+                "icon_colour": "purple"
+            }
+        ],
+        "Elk River Floats & Trestle Park": [
+            {
+                "longitude": -94.45495636167784,
+                "latitude": 36.58622508009372,
+                "description": "base description",
+                "icon_colour": "blue"
+            }
+        ],
+        "Eagles Nest Camp & Canoe": [
+            {
+                "longitude": -94.45610527702216,
+                "latitude": 36.58458088790759,
+                "description": "base description",
+                "icon_colour": "orange"
+            }
+        ],
+        "Elk River Floats & Kozy Kamp": [
+            {
+                "longitude": -94.38902691749738,
+                "latitude": 36.58976853359177,
+                "description": "base description",
+                "icon_colour": "red"
+            }
+        ]
+    }
+}
