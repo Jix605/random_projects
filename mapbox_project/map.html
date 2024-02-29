@@ -36,6 +36,10 @@
             text-align: center;
             font-family: 'Open Sans', sans-serif;
         }
+
+        a {
+            outline: 0;
+        }
     </style>
 </head>
 
@@ -43,14 +47,20 @@
     <div id="map"></div>
     <script src="jquery.js"></script>
     <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        var mapsLink = "google_maps_url";
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            mapsLink = "apple_maps_url";
+        }
         // TO MAKE THE MAP APPEAR YOU MUST
         // ADD YOUR ACCESS TOKEN FROM
         // https://account.mapbox.com
         mapboxgl.accessToken = 'pk.eyJ1IjoicnlsYW5sZXR0IiwiYSI6ImNrbDdtOXMzMjFvaGEydXA2dDdmb3V3OGoifQ.hqdEylBW6vJtN8bQoMdvqA';
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            center: [-94.49, 36.54], // starting position [lng, lat]
-            zoom: 9 // starting zoom
+            center: [-94.45610527702216, 36.58458088790759], // starting position [lng, lat]
+            zoom: 12.5, // starting zoom
+            pitch: 0 // angle of the map
         });
 
         fetch('./pins.json').then(response => response.json()).then(map_data => {
@@ -63,7 +73,7 @@
                 new mapboxgl.Marker(el).setLngLat([data["longitude"], data["latitude"]]).setPopup(
                     new mapboxgl.Popup({ offset: 25 }) // add popups
                         .setHTML(
-                            `<h3>${index}</h3><p>${data["description"]}</p>`
+                            `<h3>${index}</h3><p>${data["description"]} <a href="${data[mapsLink]}">open in maps</a> </p>`
                         )
                 )
                     .addTo(map)

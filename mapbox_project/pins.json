@@ -5,7 +5,9 @@
                 "longitude": -94.49422953991868,
                 "latitude": 36.54881468620122,
                 "description": "base description",
-                "icon_colour": "purple"
+                "icon_colour": "purple",
+                "apple_maps_url": "https://maps.apple.com/?address=201%20RT-90,%20Noel,%20MO%20%2064854,%20United%20States&ll=36.548666,-94.494349&q=201%20RT-90&t=m",
+                "google_maps_url": "https://maps.app.goo.gl/vUeBMh3CmAVEerhv5"
             }
         ],
         "Elk River Floats & Trestle Park": [
@@ -13,7 +15,9 @@
                 "longitude": -94.45495636167784,
                 "latitude": 36.58622508009372,
                 "description": "base description",
-                "icon_colour": "blue"
+                "icon_colour": "blue",
+                "apple_maps_url": "https://maps.apple.com/?address=435%20Elk%20Springs%20Rd,%20Noel,%20MO%20%2064854,%20United%20States&ll=36.586102,-94.454914&q=435%20Elk%20Springs%20Rd&t=m",
+                "google_maps_url": "https://maps.app.goo.gl/Vd6v9mKWY9jL7qjC9"
             }
         ],
         "Eagles Nest Camp & Canoe": [
@@ -21,7 +25,9 @@
                 "longitude": -94.45610527702216,
                 "latitude": 36.58458088790759,
                 "description": "base description",
-                "icon_colour": "orange"
+                "icon_colour": "orange",
+                "apple_maps_url": "https://maps.apple.com/?address=53%20Eagles%20Nest%20Ln,%20Noel,%20MO%20%2064854,%20United%20States&ll=36.584461,-94.455980&q=53%20Eagles%20Nest%20Ln&t=m",
+                "google_maps_url": "https://maps.app.goo.gl/WRSi3DKdD3ZVat1eA"
             }
         ],
         "Elk River Floats & Kozy Kamp": [
@@ -29,7 +35,9 @@
                 "longitude": -94.38902691749738,
                 "latitude": 36.58976853359177,
                 "description": "base description",
-                "icon_colour": "red"
+                "icon_colour": "red",
+                "apple_maps_url": "https://maps.apple.com/?address=71%20Elk%20River%20Rd,%20Pineville,%20MO%20%2064856,%20United%20States&ll=36.589217,-94.390072&q=71%20Elk%20River%20Rd&t=m",
+                "google_maps_url": "https://maps.app.goo.gl/LFDFrnLMZYFfqiMu7"
             }
         ]
     }
